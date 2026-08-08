@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Simone Gerletti | Fisioterapista</title>
+<meta id="pageDesc" name="description" content="Simone Gerletti, fisioterapista. Riabilitazione, massaggio, ginnastica posturale e prevenzione. Contattami per una visita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#123B35;
+    --teal-700:#1E6F61;
+    --teal-500:#2F9C89;
+    --teal-400:#4CB09B;
+    --sage-300:#B7D0C3;
+    --sage-100:#E7EFE9;
+    --cream:#FAF8F3;
+    --ink:#16211D;
+    --ink-soft:#4A5850;
+    --white:#FFFFFF;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --shadow:0 20px 40px -20px rgba(18,59,53,0.25);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  section{padding:52px 24px;}
+  .container{max-width:1080px; margin:0 auto;}
+  h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:600; color:var(--teal-900); line-height:1.15;}
+  .eyebrow{
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--teal-500);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+
+  /* vertebra dot motif — the site's signature element, echoing the spine icon in the logo */
+  .spine{display:inline-flex; align-items:center; gap:5px;}
+  .spine span{
+    display:block; border-radius:50%; background:var(--sage-300);
+  }
+  .spine.sm span{width:6px; height:6px;}
+  .spine.sm span:nth-child(2){width:8px; height:8px; background:var(--teal-500);}
+  .spine.sm span:nth-child(3){width:6px; height:6px;}
+  .divider{
+    display:flex; justify-content:center; align-items:flex-end; gap:8px; padding:0 0 8px 0;
+  }
+  .divider span{display:block; width:9px; border-radius:50%; background:var(--sage-300);}
+  .divider span:nth-child(1){height:9px; background:var(--sage-300);}
+  .divider span:nth-child(2){height:16px; width:12px; background:var(--teal-400);}
+  .divider span:nth-child(3){height:22px; width:14px; background:var(--teal-700);}
+  .divider span:nth-child(4){height:16px; width:12px; background:var(--teal-400);}
+  .divider span:nth-child(5){height:9px; background:var(--sage-300);}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,248,243,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(18,59,53,0.08);
+  }
+  .nav{
+    max-width:1080px; margin:0 auto; padding:12px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px;
+  }
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .brand{display:flex; align-items:center; gap:10px; flex-shrink:0;}
+  .brand img{height:clamp(52px, 9vw, 78px); width:auto;}
+  .brand-text{font-family:'Fraunces', serif; font-weight:600; font-size:17px; color:var(--teal-900); letter-spacing:.01em;}
+  .brand-text small{display:block; font-family:'Inter'; font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--teal-500);}
+  .nav-links{display:flex; gap:14px; font-size:14px; font-weight:600; color:var(--teal-700);}
+  .nav-links a{padding:6px 2px; white-space:nowrap;}
+  .nav-links a:hover{color:var(--teal-500);}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:100px;
+    font-weight:600; font-size:14px;
+    background:var(--teal-500); color:var(--white);
+    box-shadow:0 10px 24px -8px rgba(47,156,137,0.55);
+    border:none; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px); box-shadow:0 14px 28px -8px rgba(47,156,137,0.6);}
+  .btn-ghost{
+    background:transparent; color:var(--teal-700); box-shadow:none;
+    border:1.5px solid var(--sage-300);
+  }
+  .btn-ghost:hover{background:var(--sage-100); border-color:var(--teal-400);}
+  .btn svg{width:17px; height:17px;}
+  .nav-right .btn{padding:9px 14px; font-size:12.5px;}
+  .nav-right .btn svg{width:15px; height:15px;}
+  .lang-flags{display:flex; align-items:center; gap:6px; margin-right:auto; padding-left:4px;}
+  .flag-btn{
+    font-size:20px; line-height:1; padding:6px; border-radius:8px;
+    background:transparent; border:1.5px solid transparent; cursor:pointer;
+    opacity:.55; transition:opacity .15s ease, border-color .15s ease;
+  }
+  .flag-btn:hover{opacity:.85;}
+  .flag-btn.active{opacity:1; border-color:var(--sage-300); background:var(--sage-100);}
+  @media(min-width:560px){
+    .nav-right .btn{padding:11px 20px; font-size:14px;}
+    .nav-right .btn svg{width:17px; height:17px;}
+    .flag-btn{font-size:22px; padding:7px 8px;}
+  }
+
+  @media(min-width:860px){
+    .nav-links{gap:30px; font-size:15.5px;}
+  }
+
+  /* Hero */
+  .hero{
+    padding:44px 24px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .container{
+    position:relative;
+  }
+  .hero-eyebrow-top{
+    justify-content:center;
+    text-align:center;
+    width:100%;
+    margin-bottom:26px;
+  }
+  .hero-copy{
+    position:relative; z-index:2;
+    max-width:640px;
+  }
+  .hero-copy h1{
+    font-size:clamp(17px, 4.9vw, 40px);
+    margin-bottom:20px;
+    text-align:center;
+  }
+  .hero-copy h1 .h1-line{white-space:nowrap;}
+  .hero-copy h1 em{font-style:italic; color:var(--teal-500);}
+  .hero-copy p{
+    font-size:16px; color:var(--ink-soft); max-width:46ch; margin-bottom:30px;
+    padding-right:32%;
+  }
+  .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px;}
+  .hero-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; color:var(--teal-700);
+    background:var(--sage-100); border:1px solid rgba(183,208,195,0.6);
+    border-radius:100px; padding:8px 16px;
+    width:fit-content;
+  }
+  .hero-badge::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--teal-500); flex-shrink:0;}
+  .hero-tags{display:flex; flex-wrap:wrap; gap:10px 22px;}
+  .hero-tags span{
+    display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink-soft); font-weight:500;
+  }
+  .hero-tags span::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--teal-500);}
+
+  .hero-visual{
+    position:absolute;
+    top:110px; right:0;
+    z-index:1;
+    width:30%;
+    max-width:180px;
+  }
+  .blob{
+    position:relative;
+    width:100%;
+    aspect-ratio:0.92/1;
+  }
+  .blob::before{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(160deg, var(--teal-500), var(--teal-900));
+    border-radius:46% 54% 62% 38% / 54% 42% 58% 46%;
+    transform:rotate(-4deg);
+  }
+  .blob::after{
+    content:'';
+    position:absolute; inset:0;
+    border-radius:46% 54% 62% 38% / 54% 42% 58% 46%;
+    border:1.5px solid var(--sage-300);
+    transform:rotate(-4deg) scale(1.09);
+    opacity:.6;
+  }
+  .blob-photo{
+    position:absolute; inset:10px;
+    border-radius:44% 56% 60% 40% / 52% 44% 56% 48%;
+    overflow:hidden;
+    background:var(--sage-100);
+  }
+  .blob-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:top center;
+  }
+  .blob-photo .fallback{
+    width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column; gap:8px;
+    color:var(--white);
+    background:linear-gradient(160deg, var(--teal-500), var(--teal-700));
+    text-align:center; padding:14px; font-size:11px;
+  }
+
+  @media(min-width:700px){
+    .hero-copy p{padding-right:24%;}
+    .hero-visual{width:26%; max-width:220px; top:135px;}
+  }
+  @media(min-width:900px){
+    .hero{padding:64px 24px 56px;}
+    .hero-copy{max-width:680px;}
+    .hero-copy h1{font-size:36px;}
+    .hero-copy p{padding-right:15%;}
+    .hero-visual{width:22%; max-width:250px; top:150px; right:20px;}
+  }
+
+  /* Intro / philosophy */
+  .intro{
+    background:var(--white);
+    border-radius:var(--radius-lg);
+    margin:0 24px;
+    padding:44px 28px;
+  }
+  .intro .container{max-width:760px; text-align:center;}
+  .intro h2{font-size:clamp(26px,4vw,34px); margin-bottom:22px;}
+  .intro p{color:var(--ink-soft); font-size:16.5px; margin-bottom:14px;}
+  .intro-grid{
+    margin-top:40px; display:grid; gap:18px; grid-template-columns:1fr;
+    text-align:left;
+  }
+  .intro-grid .card-mini{
+    background:var(--sage-100); border-radius:var(--radius-md);
+    padding:20px 22px; font-size:14.5px; color:var(--teal-900); font-weight:500;
+  }
+  @media(min-width:700px){ .intro-grid{grid-template-columns:repeat(3,1fr);} }
+
+  /* Testimonianze */
+  .testimonianze{padding:52px 0 60px;}
+  .testimonianze .head{text-align:center; max-width:600px; margin:0 auto 40px; padding:0 24px;}
+  .testimonianze .head h2{font-size:clamp(28px,4vw,38px); margin-bottom:14px;}
+  .testimonianze .head p{color:var(--ink-soft); font-size:16px;}
+
+  .foto-scroll{
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:6px 24px 16px;
+    scrollbar-width:thin;
+    scrollbar-color:var(--sage-300) transparent;
+  }
+  .foto-scroll::-webkit-scrollbar{height:6px;}
+  .foto-scroll::-webkit-scrollbar-thumb{background:var(--sage-300); border-radius:10px;}
+  .foto-track{
+    display:flex; gap:14px;
+    width:max-content;
+    padding:0 2px;
+  }
+  .foto-item{
+    scroll-snap-align:start;
+    flex:0 0 auto;
+    width:160px;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(18,59,53,0.06);
+  }
+  .foto-photo{width:100%; height:190px; background:var(--sage-100);}
+  .foto-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .foto-caption{padding:12px 14px 14px;}
+  .foto-caption b{display:block; font-size:12.5px; color:var(--teal-900); margin-bottom:3px;}
+  .foto-caption span{display:block; font-size:11.5px; color:var(--ink-soft); line-height:1.4;}
+  @media(min-width:700px){ .foto-item{width:190px;} .foto-photo{height:220px;} }
+
+  .testi-scroll{
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:6px 24px 18px;
+    scrollbar-width:thin;
+    scrollbar-color:var(--sage-300) transparent;
+  }
+  .testi-scroll::-webkit-scrollbar{height:6px;}
+  .testi-scroll::-webkit-scrollbar-thumb{background:var(--sage-300); border-radius:10px;}
+  .testi-track{
+    display:flex; gap:18px;
+    width:max-content;
+    max-width:none;
+    margin:0 auto;
+    padding:0 2px;
+  }
+  .testi-card{
+    scroll-snap-align:start;
+    flex:0 0 auto;
+    width:270px;
+    background:var(--white);
+    border-radius:var(--radius-md);
+    padding:26px 24px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(18,59,53,0.06);
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .testi-card .stars{color:var(--teal-500); font-size:15px; letter-spacing:2px;}
+  .testi-card p{font-size:14px; color:var(--ink-soft); line-height:1.55; flex-grow:1;}
+  .testi-author{font-size:13.5px; font-weight:700; color:var(--teal-900);}
+  .testi-author span{display:block; font-weight:500; font-size:12px; color:var(--teal-500); margin-top:2px;}
+
+  @media(min-width:700px){
+    .testi-card{width:300px;}
+  }
+
+  /* Servizi */
+  .servizi .head{text-align:center; max-width:600px; margin:0 auto 48px;}
+  .servizi .head h2{font-size:clamp(28px,4vw,38px); margin-bottom:14px;}
+  .servizi .head p{color:var(--ink-soft); font-size:16px;}
+  .servizi-grid{
+    display:grid; grid-template-columns:1fr; gap:20px;
+  }
+  @media(min-width:700px){ .servizi-grid{grid-template-columns:1fr 1fr;} }
+
+  .service-card{
+    background:var(--white); border-radius:var(--radius-lg);
+    padding:32px 28px; box-shadow:var(--shadow);
+    border:1px solid rgba(18,59,53,0.06);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .service-card:hover{transform:translateY(-4px);}
+  .service-icon{
+    width:52px; height:52px; border-radius:16px;
+    background:var(--sage-100);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px;
+  }
+  .service-icon svg{width:26px; height:26px; stroke:var(--teal-700);}
+  .service-card h3{font-size:20px; margin-bottom:10px;}
+  .service-card p{color:var(--ink-soft); font-size:14.5px; margin-bottom:16px;}
+  .service-card ul{display:flex; flex-direction:column; gap:8px;}
+  .service-card ul li{
+    font-size:13.5px; color:var(--teal-900); font-weight:500;
+    display:flex; align-items:flex-start; gap:8px;
+  }
+  .service-card ul li::before{
+    content:''; width:6px; height:6px; margin-top:6px; border-radius:50%;
+    background:var(--teal-500); flex-shrink:0;
+  }
+
+  /* Chi sono */
+  .chisono{background:var(--teal-900); color:var(--sage-100); border-radius:var(--radius-lg); margin:0 24px;}
+  .chisono .container{
+    display:grid; grid-template-columns:1fr; gap:40px; padding:44px 28px; align-items:start;
+  }
+  @media(min-width:860px){ .chisono .container{grid-template-columns:0.8fr 1.2fr; padding:52px 44px;} }
+  .chisono .eyebrow{color:var(--sage-300);}
+  .chisono h2{color:var(--white); font-size:clamp(26px,4vw,34px); margin-bottom:18px;}
+  .chisono p{color:rgba(231,239,233,0.88); font-size:15.5px; margin-bottom:14px;}
+  .chisono-photo{
+    width:100%; max-width:280px; border-radius:var(--radius-md); overflow:hidden;
+    border:2px solid rgba(183,208,195,0.35);
+  }
+  .chisono-photo img{width:100%; height:100%; object-fit:cover;}
+  .credenziali{margin-top:26px;}
+  .credenziali h4{
+    color:var(--sage-300); font-family:'Inter'; font-size:12px; letter-spacing:.12em;
+    text-transform:uppercase; margin-bottom:14px; font-weight:700;
+  }
+  .cred-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:12px;
+  }
+  .cred-item{
+    background:rgba(183,208,195,0.08);
+    border:1px solid rgba(183,208,195,0.22);
+    border-radius:14px;
+    padding:14px 16px;
+    font-size:13px; line-height:1.45;
+    color:rgba(231,239,233,0.92);
+  }
+  @media(min-width:520px){ .cred-grid{grid-template-columns:1fr 1fr 1fr;} }
+
+  /* Contatti */
+  .contatti{padding-top:44px;}
+  .contatti-card{
+    background:linear-gradient(150deg, var(--teal-500), var(--teal-700));
+    border-radius:var(--radius-lg);
+    padding:44px 28px;
+    color:var(--white);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .contatti-card::before{
+    content:'';
+    position:absolute; width:340px; height:340px; border-radius:50%;
+    background:rgba(255,255,255,0.06);
+    top:-160px; right:-120px;
+  }
+  .contatti-card .eyebrow{color:rgba(255,255,255,0.85); justify-content:center;}
+  .contatti-card .eyebrow span{background:rgba(255,255,255,0.6) !important;}
+  .contatti-card h2{color:var(--white); font-size:clamp(26px,4.5vw,38px); margin-bottom:14px; max-width:520px; margin-left:auto; margin-right:auto;}
+  .contatti-card p{color:rgba(255,255,255,0.85); max-width:480px; margin:0 auto 34px; font-size:16px;}
+  .contatti-actions{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:34px; position:relative;}
+  .contatti-card .btn{background:var(--white); color:var(--teal-700); box-shadow:0 14px 30px -10px rgba(0,0,0,0.35);}
+  .contatti-card .btn-ghost{background:transparent; color:var(--white); border-color:rgba(255,255,255,0.5);}
+  .contatti-card .btn-ghost:hover{background:rgba(255,255,255,0.12);}
+  .contact-info{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:26px;
+    font-size:14.5px; color:rgba(255,255,255,0.9); position:relative;
+  }
+  .contact-info a{display:flex; align-items:center; gap:8px; font-weight:500;}
+  .contact-info svg{width:17px; height:17px;}
+
+  footer{
+    text-align:center; padding:40px 24px 32px; color:var(--ink-soft); font-size:13px;
+  }
+  footer .brand-text{justify-content:center; display:flex; margin-bottom:6px;}
+
+  /* WhatsApp floating button (mobile) */
+  .wa-float{
+    position:fixed; bottom:20px; right:20px; z-index:60;
+    width:56px; height:56px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 26px -6px rgba(0,0,0,0.35);
+  }
+  .wa-float svg{width:28px; height:28px; fill:var(--white);}
+
+  ::selection{background:var(--sage-300); color:var(--teal-900);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <img src="assets/logo.png" alt="Logo Simone Gerletti Fisioterapista">
+    </a>
+    <div class="lang-flags">
+      <button type="button" class="flag-btn active" id="flagIt" onclick="setLang('it')" aria-label="Italiano">🇮🇹</button>
+      <button type="button" class="flag-btn" id="flagEn" onclick="setLang('en')" aria-label="English">🇬🇧</button>
+    </div>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#chi-sono" data-i18n="nav_chi_sono">Chi sono</a>
+        <a href="#servizi" data-i18n="nav_servizi">Servizi</a>
+      </nav>
+      <a class="btn" href="https://wa.me/393314746596?text=Ciao%20Simone%2C%20vorrei%20avere%20informazioni%20su%20una%20visita" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.03.24-3.4-.71-2.87-1.15-4.72-4.07-4.86-4.26-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.57-.35.76-.35h.55c.18 0 .42-.03.65.5.24.55.8 1.94.87 2.08.07.14.12.3.02.49-.1.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.6 2 1.1.98 2.03 1.29 2.31 1.43.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.09 1.63.77 1.9.91.28.14.47.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow hero-eyebrow-top"><span class="spine sm"><span></span><span></span><span></span></span> <span data-i18n="hero_eyebrow">Dott. Simone Gerletti · Fisioterapista</span></p>
+      <div class="hero-copy">
+        <h1 data-i18n-html="hero_title"><span class="h1-line">Ti aiuto a <em>tornare a muoverti</em></span><br>senza dolore</h1>
+        <p data-i18n="hero_p">Percorsi di riabilitazione, massoterapia, ginnastica posturale e prevenzione, costruiti su misura per le tue abitudini, i tuoi ritmi e il tuo stile di vita.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/393314746596?text=Ciao%20Simone%2C%20vorrei%20prenotare%20una%20visita" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.03.24-3.4-.71-2.87-1.15-4.72-4.07-4.86-4.26-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.57-.35.76-.35h.55c.18 0 .42-.03.65.5.24.55.8 1.94.87 2.08.07.14.12.3.02.49-.1.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.6 2 1.1.98 2.03 1.29 2.31 1.43.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.09 1.63.77 1.9.91.28.14.47.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+            <span data-i18n="btn_whatsapp">Scrivimi su WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="#servizi" data-i18n="btn_servizi">Scopri i trattamenti</a>
+        </div>
+        <div class="hero-badge" data-i18n="hero_badge">Trattamenti anche a domicilio</div>
+      </div>
+      <div class="hero-visual">
+        <div class="blob">
+          <div class="blob-photo">
+            <img src="assets/simone.jpg" alt="Simone Gerletti, fisioterapista" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="fallback" style="display:none;">
+              <strong style="font-family:'Fraunces',serif; font-size:14px;">Simone Gerletti</strong>
+              <span data-i18n="hero_fallback">Aggiungi la tua foto in<br><code>assets/simone.jpg</code></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- INTRO / PERCHÉ LA FISIOTERAPIA -->
+  <section class="intro-wrap" style="padding:0 0 52px;">
+    <div class="intro">
+      <div class="container">
+        <p class="eyebrow" style="justify-content:center;" data-i18n="intro_eyebrow">Perché la fisioterapia</p>
+        <h2 data-i18n="intro_title">Potrebbe aiutarti a vivere le tue giornate come vuoi tu</h2>
+        <p data-i18n="intro_p1">Se dolori e fastidi muscolari ti impediscono di vivere le tue giornate come vorresti, posso aiutarti con un percorso mirato, studiato insieme a te in base alle tue abitudini, ai tuoi ritmi e al tuo stile di vita.</p>
+        <p data-i18n="intro_p2">Che tu soffra di mal di schiena, mal di collo o dolori muscolari in generale, un trattamento fisioterapico può aiutarti ad alleviare i tuoi fastidi.</p>
+        <div class="intro-grid">
+          <div class="card-mini" data-i18n="intro_card1">Lavoro ripetitivo o sedentario? Ti aiuto a mantenere la muscolatura morbida ed elastica.</div>
+          <div class="card-mini" data-i18n="intro_card2">Sei uno sportivo? Ti aiuto a prevenire gli infortuni e a recuperare più in fretta.</div>
+          <div class="card-mini" data-i18n="intro_card3">Vuoi solo rilassarti? Concediti un trattamento pensato per il tuo benessere.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIANZE -->
+  <section class="testimonianze">
+    <div class="container">
+      <div class="head">
+        <p class="eyebrow" style="justify-content:center;"><span class="spine sm"><span></span><span></span><span></span></span> <span data-i18n="testi_eyebrow">Testimonianze</span></p>
+        <h2 data-i18n="testi_title">Cosa dicono di me i pazienti</h2>
+        <p data-i18n="testi_p">Alcune delle esperienze raccontate da chi ha seguito un percorso di fisioterapia con me.</p>
+      </div>
+    </div>
+
+    <div class="foto-scroll" id="fotoScroll">
+      <div class="foto-track" id="fotoTrack">
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio101/500/620" alt="Trattamento manuale" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto1_title">Trattamento manuale</b><span data-i18n="foto1_desc">Sedute di terapia manuale per alleviare le tensioni muscolari.</span></div>
+        </div>
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio102/500/620" alt="Riabilitazione post-infortunio" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto2_title">Riabilitazione post-infortunio</b><span data-i18n="foto2_desc">Percorsi personalizzati per tornare al pieno movimento.</span></div>
+        </div>
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio103/500/620" alt="Ginnastica posturale" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto3_title">Ginnastica posturale</b><span data-i18n="foto3_desc">Esercizi mirati per il riequilibrio della postura.</span></div>
+        </div>
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio104/500/620" alt="Massaggio sportivo" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto4_title">Massaggio sportivo</b><span data-i18n="foto4_desc">Preparazione e recupero muscolare per gli atleti.</span></div>
+        </div>
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio105/500/620" alt="Fisioterapia a domicilio" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto5_title">Fisioterapia a domicilio</b><span data-i18n="foto5_desc">Trattamenti comodamente a casa tua.</span></div>
+        </div>
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio106/500/620" alt="Mobilizzazione articolare" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto6_title">Mobilizzazione articolare</b><span data-i18n="foto6_desc">Tecniche per il recupero della mobilità.</span></div>
+        </div>
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio107/500/620" alt="Stretching guidato" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto7_title">Stretching guidato</b><span data-i18n="foto7_desc">Allungamento muscolare assistito in seduta.</span></div>
+        </div>
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio108/500/620" alt="Prevenzione infortuni" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto8_title">Prevenzione infortuni</b><span data-i18n="foto8_desc">Programmi su misura per ridurre i rischi.</span></div>
+        </div>
+        <div class="foto-item">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio109/500/620" alt="Recupero funzionale" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto9_title">Recupero funzionale</b><span data-i18n="foto9_desc">Esercizi terapeutici per il recupero completo.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio101/500/620" alt="Trattamento manuale" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto1_title">Trattamento manuale</b><span data-i18n="foto1_desc">Sedute di terapia manuale per alleviare le tensioni muscolari.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio102/500/620" alt="Riabilitazione post-infortunio" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto2_title">Riabilitazione post-infortunio</b><span data-i18n="foto2_desc">Percorsi personalizzati per tornare al pieno movimento.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio103/500/620" alt="Ginnastica posturale" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto3_title">Ginnastica posturale</b><span data-i18n="foto3_desc">Esercizi mirati per il riequilibrio della postura.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio104/500/620" alt="Massaggio sportivo" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto4_title">Massaggio sportivo</b><span data-i18n="foto4_desc">Preparazione e recupero muscolare per gli atleti.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio105/500/620" alt="Fisioterapia a domicilio" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto5_title">Fisioterapia a domicilio</b><span data-i18n="foto5_desc">Trattamenti comodamente a casa tua.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio106/500/620" alt="Mobilizzazione articolare" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto6_title">Mobilizzazione articolare</b><span data-i18n="foto6_desc">Tecniche per il recupero della mobilità.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio107/500/620" alt="Stretching guidato" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto7_title">Stretching guidato</b><span data-i18n="foto7_desc">Allungamento muscolare assistito in seduta.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio108/500/620" alt="Prevenzione infortuni" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto8_title">Prevenzione infortuni</b><span data-i18n="foto8_desc">Programmi su misura per ridurre i rischi.</span></div>
+        </div>
+        <div class="foto-item foto-clone" aria-hidden="true">
+          <div class="foto-photo"><img src="https://picsum.photos/seed/fisio109/500/620" alt="Recupero funzionale" loading="lazy"></div>
+          <div class="foto-caption"><b data-i18n="foto9_title">Recupero funzionale</b><span data-i18n="foto9_desc">Esercizi terapeutici per il recupero completo.</span></div>
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </div>
+
+    <div class="testi-scroll">
+      <div class="testi-track">
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi1_text">Dopo l'operazione al ginocchio ero preoccupata per la ripresa. Simone mi ha seguita passo passo con un percorso su misura: oggi cammino e mi muovo senza nessun fastidio.</p>
+          <div class="testi-author">Elena M. <span data-i18n="testi1_role">Riabilitazione post-chirurgia</span></div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi2_text">Professionalità e disponibilità fuori dal comune. Il massaggio decontratturante mi ha risolto un dolore alla schiena che portavo dietro da mesi.</p>
+          <div class="testi-author">Marco R. <span data-i18n="testi2_role">Massaggio decontratturante</span></div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi3_text">Lavoro tutto il giorno al computer e la ginnastica posturale con Simone ha fatto una differenza enorme sulla mia postura e sui dolori al collo.</p>
+          <div class="testi-author">Chiara B. <span data-i18n="testi3_role">Ginnastica posturale</span></div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi4_text">Gioco a tennis a livello agonistico e il programma di prevenzione che mi ha preparato mi ha aiutato ad affrontare la stagione senza il solito infortunio ricorrente.</p>
+          <div class="testi-author">Davide F. <span data-i18n="testi4_role">Prevenzione sportiva</span></div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi5_text">Mio padre non riusciva più a spostarsi da solo dopo il ricovero. Le sedute a domicilio sono state una svolta, sia per lui che per la serenità di tutta la famiglia.</p>
+          <div class="testi-author">Laura G. <span data-i18n="testi5_role">Fisioterapia a domicilio</span></div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi6_text">Il massaggio sportivo prima delle gare mi aiuta tantissimo sul recupero muscolare. Simone conosce bene le esigenze di chi si allena spesso.</p>
+          <div class="testi-author">Federico C. <span data-i18n="testi6_role">Massaggio sportivo</span></div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi7_text">Un percorso di ricondizionamento serio dopo il COVID: ho ripreso fiato e forze molto più velocemente di quanto pensassi.</p>
+          <div class="testi-author">Anna P. <span data-i18n="testi7_role">Ricondizionamento post COVID-19</span></div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi8_text">Soffrivo di mal di schiena cronico da anni. Con costanza e gli esercizi giusti finalmente ho trovato sollievo, non solo un rimedio temporaneo.</p>
+          <div class="testi-author">Roberto S. <span data-i18n="testi8_role">Riabilitazione ortopedica</span></div>
+        </div>
+
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="testi9_text">Cercavo un massaggio rilassante per staccare dallo stress: ambiente curato, mani esperte e un risultato che si sente già dalla prima seduta.</p>
+          <div class="testi-author">Giulia N. <span data-i18n="testi9_role">Massaggio rilassante</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section class="servizi" id="servizi">
+    <div class="container">
+      <div class="head">
+        <p class="eyebrow" style="justify-content:center;"><span class="spine sm"><span></span><span></span><span></span></span> <span data-i18n="servizi_eyebrow">Trattamenti</span></p>
+        <h2 data-i18n="servizi_title">Un percorso pensato per te</h2>
+        <p data-i18n="servizi_p">Quattro aree di intervento, sempre personalizzate sulla persona che ho davanti.</p>
+      </div>
+      <div class="servizi-grid">
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-4 8-8 11Z"/></svg>
+          </div>
+          <h3 data-i18n="s1_title">Riabilitazione</h3>
+          <p data-i18n="s1_p">Percorso riabilitativo post-operatorio o post-infortunio, per raggiungere il miglior risultato possibile dopo un intervento chirurgico, un trauma o un periodo di allettamento.</p>
+          <ul>
+            <li data-i18n="s1_li1">Riabilitazione ortopedica</li>
+            <li data-i18n="s1_li2">Riabilitazione post-chirurgia</li>
+            <li data-i18n="s1_li3">Ricondizionamento post COVID-19</li>
+            <li data-i18n="s1_li4">Riabilitazione neurologica</li>
+            <li data-i18n="s1_li5">Riabilitazione cardio-respiratoria</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V6a1.5 1.5 0 0 1 3 0v6"/><path d="M11 12.5V4.5a1.5 1.5 0 0 1 3 0v8"/><path d="M14 12.5v-7a1.5 1.5 0 0 1 3 0v8"/><path d="M17 13.5V8a1.5 1.5 0 0 1 3 0v7c0 3.5-2 6.5-6 6.5h-2c-2.5 0-3.8-.8-5.2-2.5L4 15.8c-.6-.7-.5-1.7.2-2.3.6-.5 1.5-.5 2.1.1L8 15.5"/></svg>
+          </div>
+          <h3 data-i18n="s2_title">Massaggio</h3>
+          <p data-i18n="s2_p">Utile per risolvere tensioni e fastidi muscolari, diminuire il dolore a spalle, zona lombare e collo, e ritrovare la libertà di movimento.</p>
+          <ul>
+            <li data-i18n="s2_li1">Massaggio decontratturante</li>
+            <li data-i18n="s2_li2">Massaggio sportivo</li>
+            <li data-i18n="s2_li3">Massaggio rilassante e linfodrenante</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.6"/><path d="M12 8v6m0 0-4 7m4-7 4 7m-4-9-3-2m3 2 3-2"/></svg>
+          </div>
+          <h3 data-i18n="s3_title">Ginnastica posturale</h3>
+          <p data-i18n="s3_p">Esercizi mirati a ristabilire l'equilibrio muscolare, migliorare la postura e la capacità di controllo del corpo, agendo su zone rigide o dolenti.</p>
+          <ul>
+            <li data-i18n="s3_li1">Riequilibrio muscolare</li>
+            <li data-i18n="s3_li2">Controllo del corpo e della postura</li>
+            <li data-i18n="s3_li3">Percorsi individuali su misura</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z"/></svg>
+          </div>
+          <h3 data-i18n="s4_title">Prevenzione</h3>
+          <p data-i18n="s4_p">Programmi ad-hoc, sport-specifici e atleta-specifici, per correggere squilibri muscolari e posturali e ridurre il rischio di infortunio.</p>
+          <ul>
+            <li data-i18n="s4_li1">Mobilità attiva e passiva</li>
+            <li data-i18n="s4_li2">Training propriocettivo e neuromuscolare</li>
+            <li data-i18n="s4_li3">Correzioni posturali ed esercizi pliometrici</li>
+            <li data-i18n="s4_li4">Stretching statico, dinamico e balistico</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- CHI SONO -->
+  <section id="chi-sono" style="padding-top:0;">
+    <div class="chisono">
+      <div class="container">
+        <div class="chisono-photo">
+          <img src="assets/simone.jpg" alt="Simone Gerletti" onerror="this.parentElement.style.display='none';">
+        </div>
+        <div>
+          <p class="eyebrow"><span class="spine sm"><span></span><span></span><span></span></span> <span data-i18n="chisono_eyebrow">Chi sono</span></p>
+          <h2 data-i18n="chisono_title">Dott. Simone Gerletti, Fisioterapista</h2>
+          <p data-i18n="chisono_p1">Esercito la professione di fisioterapista dopo la laurea presso l'Università degli Studi dell'Insubria di Varese, con una tesi sperimentale sulla correlazione tra lombalgia cronica aspecifica ed equilibrio posturale statico e dinamico.</p>
+          <p data-i18n="chisono_p2">Il mio obiettivo, come professionista della salute, è aiutare le persone a raggiungere il loro miglior benessere psico-fisico attraverso la terapia manuale e l'esercizio terapeutico.</p>
+          <p data-i18n="chisono_p3">La sofferenza fisica può condizionare molto anche la nostra mente, ed è per questo che voglio aiutare quante più persone possibili a stare bene con il proprio corpo.</p>
+
+          <div class="credenziali">
+            <h4 data-i18n="cred_title">Esperienze internazionali</h4>
+            <div class="cred-grid">
+              <div class="cred-item" data-i18n="cred1">Campionati Italiani Tennis — Todi, MEF Tennis Events</div>
+              <div class="cred-item" data-i18n="cred2">ATP Challenger Tour — Internazionali Tennis di Bergamo</div>
+              <div class="cred-item" data-i18n="cred3">Zzzquil Tennis Tour — Perugia, MEF Tennis Events</div>
+              <div class="cred-item" data-i18n="cred4">Pallavolo Saronno — Campionato Nazionale FIPAV Serie B</div>
+              <div class="cred-item" data-i18n="cred5">ATP Challenger Tour — Internazionali Tennis di Bergamo</div>
+              <div class="cred-item" data-i18n="cred6">ATP Challenger Tour — Thindown Challenger Biella</div>
+              <div class="cred-item" data-i18n="cred7">Pallavolo Saronno — Campionato Nazionale FIPAV Serie B</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section class="contatti" id="contatti">
+    <div class="container">
+      <div class="contatti-card">
+        <p class="eyebrow"><span class="spine sm"><span></span><span></span><span></span></span> <span data-i18n="contatti_eyebrow">Contatti</span></p>
+        <h2 data-i18n="contatti_title">La fisioterapia comodamente a casa tua</h2>
+        <p data-i18n="contatti_p">Scrivimi per un preventivo gratuito: rispondo il prima possibile per capire insieme come posso aiutarti.</p>
+        <div class="contatti-actions">
+          <a class="btn" href="https://wa.me/393314746596?text=Ciao%20Simone%2C%20vorrei%20avere%20informazioni%20su%20una%20visita" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.03.24-3.4-.71-2.87-1.15-4.72-4.07-4.86-4.26-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.57-.35.76-.35h.55c.18 0 .42-.03.65.5.24.55.8 1.94.87 2.08.07.14.12.3.02.49-.1.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.6 2 1.1.98 2.03 1.29 2.31 1.43.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.09 1.63.77 1.9.91.28.14.47.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+            <span data-i18n="btn_whatsapp">Scrivimi su WhatsApp</span>
+          </a>
+          <a class="btn btn-ghost" href="mailto:simone.gerletti@gmail.com" data-i18n="btn_email">Scrivi un'email</a>
+        </div>
+        <div class="contact-info">
+          <a href="tel:+393314746596"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.36 1.79.7 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.27a2 2 0 0 1 2.11-.45c.84.34 1.73.58 2.63.7A2 2 0 0 1 22 16.92Z"/></svg> 331 474 6596</a>
+          <a href="mailto:simone.gerletti@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4Z"/><path d="m4 6 8 7 8-7"/></svg> simone.gerletti@gmail.com</a>
+          <a href="https://www.facebook.com/fisiogerletti" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg> Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="brand-text">Simone Gerletti <small style="margin-left:6px;" data-i18n="footer_role">Fisioterapista</small></div>
+  <p>&copy; <span id="year"></span> <span data-i18n="footer_copy">Simone Gerletti Fisioterapista. Tutti i diritti riservati.</span></p>
+</footer>
+
+<a class="wa-float" id="waFloatBtn" href="https://wa.me/393314746596?text=Ciao%20Simone%2C%20vorrei%20avere%20informazioni%20su%20una%20visita" target="_blank" rel="noopener" aria-label="Scrivimi su WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.03.24-3.4-.71-2.87-1.15-4.72-4.07-4.86-4.26-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.57-.35.76-.35h.55c.18 0 .42-.03.65.5.24.55.8 1.94.87 2.08.07.14.12.3.02.49-.1.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.6 2 1.1.98 2.03 1.29 2.31 1.43.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.09 1.63.77 1.9.91.28.14.47.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var translations = {
+    en: {
+      pageTitle: "Simone Gerletti | Physiotherapist",
+      pageDesc: "Simone Gerletti, physiotherapist. Rehabilitation, massage, postural exercise and prevention. Get in touch for a visit.",
+      nav_chi_sono: "About me",
+      nav_servizi: "Services",
+      hero_eyebrow: "Dr. Simone Gerletti · Physiotherapist",
+      hero_title: '<span class="h1-line">I\'ll help you <em>move again</em></span><br>pain-free',
+      hero_p: "Rehabilitation, massage therapy, postural exercise and prevention programmes, built around your habits, your pace and your lifestyle.",
+      btn_whatsapp: "Message me on WhatsApp",
+      btn_servizi: "See my treatments",
+      hero_fallback: "Add your photo at<br><code>assets/simone.jpg</code>",
+      hero_badge: "Home visits also available",
+      intro_eyebrow: "Why physiotherapy",
+      intro_title: "It could help you live your days exactly as you want to",
+      intro_p1: "If aches and muscle pain are keeping you from living your days the way you'd like, I can help with a targeted programme, designed together with you around your habits, your pace and your lifestyle.",
+      intro_p2: "Whether you suffer from back pain, neck pain or muscle pain in general, a physiotherapy treatment can help relieve your discomfort.",
+      intro_card1: "Repetitive or sedentary job? I'll help keep your muscles soft and flexible.",
+      intro_card2: "Are you an athlete? I'll help prevent injuries and recover faster.",
+      intro_card3: "Just want to relax? Treat yourself to a session designed for your wellbeing.",
+      testi_eyebrow: "Testimonials",
+      testi_title: "What patients say about me",
+      testi_p: "A few of the experiences shared by people who've followed a physiotherapy programme with me.",
+      foto1_title: "Manual therapy",
+      foto1_desc: "Manual therapy sessions to relieve muscle tension.",
+      foto2_title: "Post-injury rehabilitation",
+      foto2_desc: "Tailored programmes to return to full movement.",
+      foto3_title: "Postural exercise",
+      foto3_desc: "Targeted exercises to rebalance your posture.",
+      foto4_title: "Sports massage",
+      foto4_desc: "Preparation and muscle recovery for athletes.",
+      foto5_title: "Physiotherapy at home",
+      foto5_desc: "Treatments in the comfort of your own home.",
+      foto6_title: "Joint mobilisation",
+      foto6_desc: "Techniques to restore joint mobility.",
+      foto7_title: "Guided stretching",
+      foto7_desc: "Assisted muscle stretching during sessions.",
+      foto8_title: "Injury prevention",
+      foto8_desc: "Tailored programmes to reduce the risk of injury.",
+      foto9_title: "Functional recovery",
+      foto9_desc: "Therapeutic exercises for a complete recovery.",
+      testi1_text: "After my knee surgery I was worried about recovery. Simone guided me step by step with a tailor-made programme: today I walk and move without any discomfort.",
+      testi1_role: "Post-surgery rehabilitation",
+      testi2_text: "Outstanding professionalism and availability. The deep-tissue massage resolved a back pain I'd been carrying around for months.",
+      testi2_role: "Deep-tissue massage",
+      testi3_text: "I work at a computer all day, and postural exercise with Simone made a huge difference to my posture and neck pain.",
+      testi3_role: "Postural exercise",
+      testi4_text: "I play competitive tennis, and the prevention programme he built for me helped me get through the season without my usual recurring injury.",
+      testi4_role: "Sports injury prevention",
+      testi5_text: "My father couldn't move around on his own after being discharged. Home visits were a turning point, both for him and for our family's peace of mind.",
+      testi5_role: "Physiotherapy at home",
+      testi6_text: "Sports massage before races helps my muscle recovery enormously. Simone really understands the needs of people who train often.",
+      testi6_role: "Sports massage",
+      testi7_text: "A serious reconditioning programme after COVID: I regained my breath and strength much faster than I expected.",
+      testi7_role: "Post COVID-19 reconditioning",
+      testi8_text: "I'd suffered from chronic back pain for years. With consistency and the right exercises I finally found relief, not just a temporary fix.",
+      testi8_role: "Orthopaedic rehabilitation",
+      testi9_text: "I was looking for a relaxing massage to unwind from stress: a well-kept setting, expert hands, and results you feel from the very first session.",
+      testi9_role: "Relaxation massage",
+      servizi_eyebrow: "Treatments",
+      servizi_title: "A path designed for you",
+      servizi_p: "Four areas of care, always tailored to the person in front of me.",
+      s1_title: "Rehabilitation",
+      s1_p: "A rehabilitation programme after surgery or injury, to achieve the best possible outcome following an operation, trauma, or a period of bed rest.",
+      s1_li1: "Orthopaedic rehabilitation",
+      s1_li2: "Post-surgery rehabilitation",
+      s1_li3: "Post COVID-19 reconditioning",
+      s1_li4: "Neurological rehabilitation",
+      s1_li5: "Cardio-respiratory rehabilitation",
+      s2_title: "Massage",
+      s2_p: "Helpful for relieving muscle tension and discomfort, reducing pain in the shoulders, lower back and neck, and restoring freedom of movement.",
+      s2_li1: "Deep-tissue massage",
+      s2_li2: "Sports massage",
+      s2_li3: "Relaxation and lymphatic drainage massage",
+      s3_title: "Postural Exercise",
+      s3_p: "Targeted exercises to restore muscle balance, improve posture and body control, working on stiff or painful areas.",
+      s3_li1: "Muscle rebalancing",
+      s3_li2: "Body and posture control",
+      s3_li3: "Individual, tailor-made programmes",
+      s4_title: "Prevention",
+      s4_p: "Ad-hoc, sport-specific and athlete-specific programmes, to correct muscular and postural imbalances and reduce the risk of injury.",
+      s4_li1: "Active and passive mobility",
+      s4_li2: "Proprioceptive and neuromuscular training",
+      s4_li3: "Postural corrections and plyometric exercises",
+      s4_li4: "Static, dynamic and ballistic stretching",
+      chisono_eyebrow: "About me",
+      chisono_title: "Dr. Simone Gerletti, Physiotherapist",
+      chisono_p1: "I've been practising as a physiotherapist since graduating from the University of Insubria in Varese, with an experimental thesis on the correlation between chronic non-specific low back pain and static and dynamic postural balance.",
+      chisono_p2: "My goal, as a healthcare professional, is to help people achieve their best psycho-physical wellbeing through manual therapy and therapeutic exercise.",
+      chisono_p3: "Physical pain can weigh heavily on the mind too, which is why I want to help as many people as possible feel good in their own body.",
+      cred_title: "International experience",
+      cred1: "Italian Tennis Championships — Todi, MEF Tennis Events",
+      cred2: "ATP Challenger Tour — Bergamo Tennis Internationals",
+      cred3: "Zzzquil Tennis Tour — Perugia, MEF Tennis Events",
+      cred4: "Pallavolo Saronno — FIPAV National Championship, Serie B",
+      cred5: "ATP Challenger Tour — Bergamo Tennis Internationals",
+      cred6: "ATP Challenger Tour — Thindown Challenger Biella",
+      cred7: "Pallavolo Saronno — FIPAV National Championship, Serie B",
+      contatti_eyebrow: "Contact",
+      contatti_title: "Physiotherapy, right at your home",
+      contatti_p: "Message me for a free quote: I'll get back to you as soon as possible to see how I can help.",
+      btn_email: "Send an email",
+      footer_role: "Physiotherapist",
+      footer_copy: "Simone Gerletti Physiotherapist. All rights reserved."
+    }
+  };
+
+  var originalContent = {};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    originalContent[el.getAttribute('data-i18n')] = el.innerHTML;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+    originalContent[el.getAttribute('data-i18n-html')] = el.innerHTML;
+  });
+  var originalTitle = document.getElementById('pageTitle').textContent;
+  var originalDesc = document.getElementById('pageDesc').getAttribute('content');
+  var originalWaLabel = document.getElementById('waFloatBtn').getAttribute('aria-label');
+
+  var currentLang = 'it';
+
+  function setLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    var dict = lang === 'en' ? translations.en : null;
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      el.innerHTML = (dict && dict[key]) ? dict[key] : originalContent[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-html');
+      el.innerHTML = (dict && dict[key]) ? dict[key] : originalContent[key];
+    });
+
+    document.getElementById('pageTitle').textContent = (dict && dict.pageTitle) ? dict.pageTitle : originalTitle;
+    document.getElementById('pageDesc').setAttribute('content', (dict && dict.pageDesc) ? dict.pageDesc : originalDesc);
+    document.getElementById('waFloatBtn').setAttribute('aria-label', (dict && dict.btn_whatsapp) ? dict.btn_whatsapp : originalWaLabel);
+    document.getElementById('flagIt').classList.toggle('active', lang === 'it');
+    document.getElementById('flagEn').classList.toggle('active', lang === 'en');
+  }
+
+  function toggleLang(){
+    setLang(currentLang === 'it' ? 'en' : 'it');
+  }
+
+  // Infinite loop for the photo carousel: the track contains the 9 photos twice;
+  // once the user scrolls past the first set, we silently jump back to the start.
+  (function(){
+    var scrollEl = document.getElementById('fotoScroll');
+    var trackEl = document.getElementById('fotoTrack');
+    if(!scrollEl || !trackEl) return;
+    var singleSetWidth = trackEl.scrollWidth / 2;
+    scrollEl.addEventListener('scroll', function(){
+      if(scrollEl.scrollLeft >= singleSetWidth - 4){
+        scrollEl.scrollLeft = scrollEl.scrollLeft - singleSetWidth;
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
