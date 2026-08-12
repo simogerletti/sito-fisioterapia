@@ -38,7 +38,7 @@
   img{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
   ul{list-style:none;}
-  section{padding:52px 24px;}
+  section{padding:40px 20px;}
   .container{max-width:1080px; margin:0 auto;}
   h1,h2,h3,h4{font-family:'Fraunces', serif; font-weight:600; color:var(--teal-900); line-height:1.15;}
   .eyebrow{
@@ -80,22 +80,22 @@
     border-bottom:1px solid rgba(18,59,53,0.08);
   }
   .nav{
-    max-width:1080px; margin:0 auto; padding:12px 24px;
+    max-width:1080px; margin:0 auto; padding:10px 16px;
     display:flex; align-items:center; justify-content:space-between;
-    gap:16px;
+    gap:10px;
   }
-  .nav-right{display:flex; align-items:center; gap:14px;}
+  .nav-right{display:flex; align-items:center; gap:10px;}
   .brand{display:flex; align-items:center; gap:10px; flex-shrink:0;}
-  .brand img{height:clamp(52px, 9vw, 78px); width:auto;}
+  .brand img{height:clamp(46px, 11vw, 78px); width:auto;}
   .brand-text{font-family:'Fraunces', serif; font-weight:600; font-size:17px; color:var(--teal-900); letter-spacing:.01em;}
   .brand-text small{display:block; font-family:'Inter'; font-weight:500; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--teal-500);}
-  .nav-links{display:flex; gap:14px; font-size:14px; font-weight:600; color:var(--teal-700);}
-  .nav-links a{padding:6px 2px; white-space:nowrap;}
+  .nav-links{display:flex; gap:10px; font-size:12.5px; font-weight:600; color:var(--teal-700);}
+  .nav-links a{padding:6px 1px; white-space:nowrap;}
   .nav-links a:hover{color:var(--teal-500);}
   .btn{
     display:inline-flex; align-items:center; gap:8px;
-    padding:11px 20px; border-radius:100px;
-    font-weight:600; font-size:14px;
+    padding:13px 20px; border-radius:100px;
+    font-weight:600; font-size:14.5px;
     background:var(--teal-500); color:var(--white);
     box-shadow:0 10px 24px -8px rgba(47,156,137,0.55);
     border:none; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease;
@@ -108,11 +108,15 @@
   }
   .btn-ghost:hover{background:var(--sage-100); border-color:var(--teal-400);}
   .btn svg{width:17px; height:17px;}
-  .nav-right .btn{padding:9px 14px; font-size:12.5px;}
-  .nav-right .btn svg{width:15px; height:15px;}
-  .lang-flags{display:flex; align-items:center; gap:6px; margin-right:auto; padding-left:4px;}
+  .nav-right .btn{padding:9px 12px; font-size:12.5px; gap:6px;}
+  .nav-right .btn svg{width:16px; height:16px;}
+  @media(max-width:400px){
+    .nav-right .btn{padding:9px 10px;}
+    .nav-right .btn .wa-label{display:none;}
+  }
+  .lang-flags{display:flex; align-items:center; gap:4px; margin-right:auto; padding-left:2px;}
   .flag-btn{
-    font-size:20px; line-height:1; padding:6px; border-radius:8px;
+    font-size:18px; line-height:1; padding:5px; border-radius:8px;
     background:transparent; border:1.5px solid transparent; cursor:pointer;
     opacity:.55; transition:opacity .15s ease, border-color .15s ease;
   }
@@ -130,7 +134,7 @@
 
   /* Hero */
   .hero{
-    padding:44px 24px 40px;
+    padding:32px 20px 34px;
     position:relative;
     overflow:hidden;
   }
@@ -155,8 +159,8 @@
   .hero-copy h1 .h1-line{white-space:nowrap;}
   .hero-copy h1 em{font-style:italic; color:var(--teal-500);}
   .hero-copy p{
-    font-size:16px; color:var(--ink-soft); max-width:46ch; margin-bottom:30px;
-    padding-right:32%;
+    font-size:15.5px; color:var(--ink-soft); max-width:46ch; margin-bottom:26px;
+    padding-right:24%;
   }
   .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px;}
   .hero-badge{
@@ -234,27 +238,27 @@
   .intro{
     background:var(--white);
     border-radius:var(--radius-lg);
-    margin:0 24px;
-    padding:44px 28px;
+    margin:0 16px;
+    padding:34px 20px;
   }
   .intro .container{max-width:760px; text-align:center;}
-  .intro h2{font-size:clamp(26px,4vw,34px); margin-bottom:22px;}
-  .intro p{color:var(--ink-soft); font-size:16.5px; margin-bottom:14px;}
+  .intro h2{font-size:clamp(23px,5.2vw,34px); margin-bottom:18px;}
+  .intro p{color:var(--ink-soft); font-size:15px; margin-bottom:14px;}
   .intro-grid{
-    margin-top:40px; display:grid; gap:18px; grid-template-columns:1fr;
+    margin-top:30px; display:grid; gap:14px; grid-template-columns:1fr;
     text-align:left;
   }
   .intro-grid .card-mini{
     background:var(--sage-100); border-radius:var(--radius-md);
-    padding:20px 22px; font-size:14.5px; color:var(--teal-900); font-weight:500;
+    padding:16px 18px; font-size:13.5px; color:var(--teal-900); font-weight:500;
   }
   @media(min-width:700px){ .intro-grid{grid-template-columns:repeat(3,1fr);} }
 
   /* Testimonianze */
-  .testimonianze{padding:52px 0 60px;}
-  .testimonianze .head{text-align:center; max-width:600px; margin:0 auto 40px; padding:0 24px;}
-  .testimonianze .head h2{font-size:clamp(28px,4vw,38px); margin-bottom:14px;}
-  .testimonianze .head p{color:var(--ink-soft); font-size:16px;}
+  .testimonianze{padding:40px 0 48px;}
+  .testimonianze .head{text-align:center; max-width:600px; margin:0 auto 28px; padding:0 20px;}
+  .testimonianze .head h2{font-size:clamp(24px,5.5vw,38px); margin-bottom:10px;}
+  .testimonianze .head p{color:var(--ink-soft); font-size:14.5px;}
 
   .foto-scroll{
     overflow-x:auto;
@@ -326,33 +330,33 @@
   }
 
   /* Servizi */
-  .servizi .head{text-align:center; max-width:600px; margin:0 auto 48px;}
-  .servizi .head h2{font-size:clamp(28px,4vw,38px); margin-bottom:14px;}
-  .servizi .head p{color:var(--ink-soft); font-size:16px;}
+  .servizi .head{text-align:center; max-width:600px; margin:0 auto 36px;}
+  .servizi .head h2{font-size:clamp(24px,5.5vw,38px); margin-bottom:12px;}
+  .servizi .head p{color:var(--ink-soft); font-size:14.5px;}
   .servizi-grid{
-    display:grid; grid-template-columns:1fr; gap:20px;
+    display:grid; grid-template-columns:1fr; gap:16px;
   }
   @media(min-width:700px){ .servizi-grid{grid-template-columns:1fr 1fr;} }
 
   .service-card{
     background:var(--white); border-radius:var(--radius-lg);
-    padding:32px 28px; box-shadow:var(--shadow);
+    padding:24px 20px; box-shadow:var(--shadow);
     border:1px solid rgba(18,59,53,0.06);
     transition:transform .18s ease, box-shadow .18s ease;
   }
   .service-card:hover{transform:translateY(-4px);}
   .service-icon{
-    width:52px; height:52px; border-radius:16px;
+    width:46px; height:46px; border-radius:14px;
     background:var(--sage-100);
     display:flex; align-items:center; justify-content:center;
-    margin-bottom:20px;
+    margin-bottom:16px;
   }
-  .service-icon svg{width:26px; height:26px; stroke:var(--teal-700);}
-  .service-card h3{font-size:20px; margin-bottom:10px;}
-  .service-card p{color:var(--ink-soft); font-size:14.5px; margin-bottom:16px;}
-  .service-card ul{display:flex; flex-direction:column; gap:8px;}
+  .service-icon svg{width:23px; height:23px; stroke:var(--teal-700);}
+  .service-card h3{font-size:18px; margin-bottom:8px;}
+  .service-card p{color:var(--ink-soft); font-size:13.5px; margin-bottom:14px;}
+  .service-card ul{display:flex; flex-direction:column; gap:7px;}
   .service-card ul li{
-    font-size:13.5px; color:var(--teal-900); font-weight:500;
+    font-size:13px; color:var(--teal-900); font-weight:500;
     display:flex; align-items:flex-start; gap:8px;
   }
   .service-card ul li::before{
@@ -361,16 +365,16 @@
   }
 
   /* Chi sono */
-  .chisono{background:var(--teal-900); color:var(--sage-100); border-radius:var(--radius-lg); margin:0 24px;}
+  .chisono{background:var(--teal-900); color:var(--sage-100); border-radius:var(--radius-lg); margin:0 16px;}
   .chisono .container{
-    display:grid; grid-template-columns:1fr; gap:40px; padding:44px 28px; align-items:start;
+    display:grid; grid-template-columns:1fr; gap:30px; padding:34px 20px; align-items:start;
   }
   @media(min-width:860px){ .chisono .container{grid-template-columns:0.8fr 1.2fr; padding:52px 44px;} }
   .chisono .eyebrow{color:var(--sage-300);}
-  .chisono h2{color:var(--white); font-size:clamp(26px,4vw,34px); margin-bottom:18px;}
-  .chisono p{color:rgba(231,239,233,0.88); font-size:15.5px; margin-bottom:14px;}
+  .chisono h2{color:var(--white); font-size:clamp(23px,5.5vw,34px); margin-bottom:14px;}
+  .chisono p{color:rgba(231,239,233,0.88); font-size:14.5px; margin-bottom:12px;}
   .chisono-photo{
-    width:100%; max-width:280px; border-radius:var(--radius-md); overflow:hidden;
+    width:100%; max-width:220px; border-radius:var(--radius-md); overflow:hidden;
     border:2px solid rgba(183,208,195,0.35);
   }
   .chisono-photo img{width:100%; height:100%; object-fit:cover;}
@@ -380,24 +384,25 @@
     text-transform:uppercase; margin-bottom:14px; font-weight:700;
   }
   .cred-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:12px;
+    display:grid; grid-template-columns:1fr; gap:10px;
   }
   .cred-item{
     background:rgba(183,208,195,0.08);
     border:1px solid rgba(183,208,195,0.22);
     border-radius:14px;
-    padding:14px 16px;
+    padding:13px 15px;
     font-size:13px; line-height:1.45;
     color:rgba(231,239,233,0.92);
   }
+  @media(min-width:460px){ .cred-grid{grid-template-columns:1fr 1fr; gap:12px;} }
   @media(min-width:520px){ .cred-grid{grid-template-columns:1fr 1fr 1fr;} }
 
   /* Contatti */
-  .contatti{padding-top:44px;}
+  .contatti{padding-top:34px;}
   .contatti-card{
     background:linear-gradient(150deg, var(--teal-500), var(--teal-700));
     border-radius:var(--radius-lg);
-    padding:44px 28px;
+    padding:34px 20px;
     color:var(--white);
     text-align:center;
     position:relative;
@@ -411,8 +416,8 @@
   }
   .contatti-card .eyebrow{color:rgba(255,255,255,0.85); justify-content:center;}
   .contatti-card .eyebrow span{background:rgba(255,255,255,0.6) !important;}
-  .contatti-card h2{color:var(--white); font-size:clamp(26px,4.5vw,38px); margin-bottom:14px; max-width:520px; margin-left:auto; margin-right:auto;}
-  .contatti-card p{color:rgba(255,255,255,0.85); max-width:480px; margin:0 auto 34px; font-size:16px;}
+  .contatti-card h2{color:var(--white); font-size:clamp(23px,6vw,38px); margin-bottom:12px; max-width:520px; margin-left:auto; margin-right:auto;}
+  .contatti-card p{color:rgba(255,255,255,0.85); max-width:480px; margin:0 auto 26px; font-size:14.5px;}
   .contatti-actions{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:34px; position:relative;}
   .contatti-card .btn{background:var(--white); color:var(--teal-700); box-shadow:0 14px 30px -10px rgba(0,0,0,0.35);}
   .contatti-card .btn-ghost{background:transparent; color:var(--white); border-color:rgba(255,255,255,0.5);}
@@ -459,7 +464,7 @@
       </nav>
       <a class="btn" href="https://wa.me/393314746596?text=Ciao%20Simone%2C%20vorrei%20avere%20informazioni%20su%20una%20visita" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.03.24-3.4-.71-2.87-1.15-4.72-4.07-4.86-4.26-.14-.19-1.16-1.55-1.16-2.96 0-1.4.74-2.09 1-2.38.26-.28.57-.35.76-.35h.55c.18 0 .42-.03.65.5.24.55.8 1.94.87 2.08.07.14.12.3.02.49-.1.19-.14.3-.28.47-.14.16-.3.36-.42.48-.14.14-.29.29-.13.57.17.28.75 1.24 1.6 2 1.1.98 2.03 1.29 2.31 1.43.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.09 1.63.77 1.9.91.28.14.47.21.53.33.07.12.07.68-.17 1.36Z"/></svg>
-        WhatsApp
+        <span class="wa-label">WhatsApp</span>
       </a>
     </div>
   </div>
@@ -500,7 +505,7 @@
   <div class="divider"><span></span><span></span><span></span><span></span><span></span></div>
 
   <!-- INTRO / PERCHÉ LA FISIOTERAPIA -->
-  <section class="intro-wrap" style="padding:0 0 52px;">
+  <section class="intro-wrap" style="padding:0 0 40px;">
     <div class="intro">
       <div class="container">
         <p class="eyebrow" style="justify-content:center;" data-i18n="intro_eyebrow">Perché la fisioterapia</p>
@@ -701,7 +706,7 @@
           <ul>
             <li data-i18n="s2_li1">Massaggio decontratturante</li>
             <li data-i18n="s2_li2">Massaggio sportivo</li>
-            <li data-i18n="s2_li3">Massaggio rilassante e linfodrenante</li>
+            <li data-i18n="s2_li3">Massaggio rilassante</li>
           </ul>
         </div>
 
@@ -879,7 +884,7 @@
       s2_p: "Helpful for relieving muscle tension and discomfort, reducing pain in the shoulders, lower back and neck, and restoring freedom of movement.",
       s2_li1: "Deep-tissue massage",
       s2_li2: "Sports massage",
-      s2_li3: "Relaxation and lymphatic drainage massage",
+      s2_li3: "Relaxation massage",
       s3_title: "Postural Exercise",
       s3_p: "Targeted exercises to restore muscle balance, improve posture and body control, working on stiff or painful areas.",
       s3_li1: "Muscle rebalancing",
