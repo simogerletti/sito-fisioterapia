@@ -108,12 +108,9 @@
   }
   .btn-ghost:hover{background:var(--sage-100); border-color:var(--teal-400);}
   .btn svg{width:17px; height:17px;}
-  .nav-right .btn{padding:9px 12px; font-size:12.5px; gap:6px;}
-  .nav-right .btn svg{width:16px; height:16px;}
-  @media(max-width:400px){
-    .nav-right .btn{padding:9px 10px;}
-    .nav-right .btn .wa-label{display:none;}
-  }
+  .nav-right .btn{padding:11px; font-size:12.5px; gap:0; border-radius:50%;}
+  .nav-right .btn svg{width:19px; height:19px;}
+  .nav-right .btn .wa-label{display:none;}
   .lang-flags{display:flex; align-items:center; gap:4px; margin-right:auto; padding-left:2px;}
   .flag-btn{
     font-size:18px; line-height:1; padding:5px; border-radius:8px;
@@ -123,8 +120,8 @@
   .flag-btn:hover{opacity:.85;}
   .flag-btn.active{opacity:1; border-color:var(--sage-300); background:var(--sage-100);}
   @media(min-width:560px){
-    .nav-right .btn{padding:11px 20px; font-size:14px;}
-    .nav-right .btn svg{width:17px; height:17px;}
+    .nav-right .btn{padding:13px;}
+    .nav-right .btn svg{width:20px; height:20px;}
     .flag-btn{font-size:22px; padding:7px 8px;}
   }
 
@@ -134,7 +131,7 @@
 
   /* Hero */
   .hero{
-    padding:32px 20px 34px;
+    padding:24px 20px 26px;
     position:relative;
     overflow:hidden;
   }
@@ -145,7 +142,7 @@
     justify-content:center;
     text-align:center;
     width:100%;
-    margin-bottom:26px;
+    margin-bottom:18px;
   }
   .hero-copy{
     position:relative; z-index:2;
@@ -153,22 +150,23 @@
   }
   .hero-copy h1{
     font-size:clamp(17px, 4.9vw, 40px);
-    margin-bottom:20px;
+    margin-bottom:14px;
     text-align:center;
   }
   .hero-copy h1 .h1-line{white-space:nowrap;}
   .hero-copy h1 em{font-style:italic; color:var(--teal-500);}
   .hero-copy p{
-    font-size:15.5px; color:var(--ink-soft); max-width:46ch; margin-bottom:26px;
-    padding-right:24%;
+    font-size:15.5px; color:var(--ink-soft); max-width:46ch; margin-bottom:22px;
+    padding-right:34%;
   }
-  .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px;}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px; justify-content:flex-end;}
   .hero-badge{
     display:inline-flex; align-items:center; gap:8px;
     font-size:13px; font-weight:600; color:var(--teal-700);
     background:var(--sage-100); border:1px solid rgba(183,208,195,0.6);
     border-radius:100px; padding:8px 16px;
     width:fit-content;
+    margin-left:auto;
   }
   .hero-badge::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--teal-500); flex-shrink:0;}
   .hero-tags{display:flex; flex-wrap:wrap; gap:10px 22px;}
@@ -181,8 +179,8 @@
     position:absolute;
     top:110px; right:0;
     z-index:1;
-    width:30%;
-    max-width:180px;
+    width:26%;
+    max-width:160px;
   }
   .blob{
     position:relative;
@@ -223,15 +221,15 @@
   }
 
   @media(min-width:700px){
-    .hero-copy p{padding-right:24%;}
-    .hero-visual{width:26%; max-width:220px; top:135px;}
+    .hero-copy p{padding-right:28%;}
+    .hero-visual{width:22%; max-width:200px; top:150px;}
   }
   @media(min-width:900px){
     .hero{padding:64px 24px 56px;}
     .hero-copy{max-width:680px;}
     .hero-copy h1{font-size:36px;}
-    .hero-copy p{padding-right:15%;}
-    .hero-visual{width:22%; max-width:250px; top:150px; right:20px;}
+    .hero-copy p{padding-right:22%;}
+    .hero-visual{width:19%; max-width:220px; top:170px; right:20px;}
   }
 
   /* Intro / philosophy */
@@ -255,7 +253,7 @@
   @media(min-width:700px){ .intro-grid{grid-template-columns:repeat(3,1fr);} }
 
   /* Testimonianze */
-  .testimonianze{padding:40px 0 48px;}
+  .testimonianze{padding:20px 0 48px;}
   .testimonianze .head{text-align:center; max-width:600px; margin:0 auto 28px; padding:0 20px;}
   .testimonianze .head h2{font-size:clamp(24px,5.5vw,38px); margin-bottom:10px;}
   .testimonianze .head p{color:var(--ink-soft); font-size:14.5px;}
@@ -505,7 +503,7 @@
   <div class="divider"><span></span><span></span><span></span><span></span><span></span></div>
 
   <!-- INTRO / PERCHÉ LA FISIOTERAPIA -->
-  <section class="intro-wrap" style="padding:0 0 40px;">
+  <section class="intro-wrap" style="padding:0 0 24px;">
     <div class="intro">
       <div class="container">
         <p class="eyebrow" style="justify-content:center;" data-i18n="intro_eyebrow">Perché la fisioterapia</p>
@@ -525,7 +523,6 @@
   <section class="testimonianze">
     <div class="container">
       <div class="head">
-        <p class="eyebrow" style="justify-content:center;"><span class="spine sm"><span></span><span></span><span></span></span> <span data-i18n="testi_eyebrow">Testimonianze</span></p>
         <h2 data-i18n="testi_title">Cosa dicono di me i pazienti</h2>
         <p data-i18n="testi_p">Alcune delle esperienze raccontate da chi ha seguito un percorso di fisioterapia con me.</p>
       </div>
@@ -676,7 +673,6 @@
   <section class="servizi" id="servizi">
     <div class="container">
       <div class="head">
-        <p class="eyebrow" style="justify-content:center;"><span class="spine sm"><span></span><span></span><span></span></span> <span data-i18n="servizi_eyebrow">Trattamenti</span></p>
         <h2 data-i18n="servizi_title">Un percorso pensato per te</h2>
         <p data-i18n="servizi_p">Quattro aree di intervento, sempre personalizzate sulla persona che ho davanti.</p>
       </div>
